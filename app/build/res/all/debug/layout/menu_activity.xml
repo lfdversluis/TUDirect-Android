@@ -2,7 +2,7 @@
 <com.lfdversluis.tudirect.objects.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#00A6FF" >
+    android:background="#00A6FF">
 
     <Button
         android:id="@+id/courseSearchButton"

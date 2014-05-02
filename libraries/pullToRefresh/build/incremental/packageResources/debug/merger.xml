@@ -222,11 +222,11 @@
             <file
                 path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\libraries\pullToRefresh\res\values\dimens.xml"
                 qualifiers="" >
-                <dimen name="indicator_internal_padding" >4dp
+                <dimen name="indicator_right_padding" >10dp
                 </dimen>
                 <dimen name="indicator_corner_radius" >12dp
                 </dimen>
-                <dimen name="indicator_right_padding" >10dp
+                <dimen name="indicator_internal_padding" >4dp
                 </dimen>
                 <dimen name="header_footer_left_right_padding" >24dp
                 </dimen>
@@ -257,17 +257,17 @@
                 </string>
                 <string name="pull_to_refresh_refreshing_label" >Loading…
                 </string>
-                <string name="pull_to_refresh_from_bottom_refreshing_label" >@string/pull_to_refresh_refreshing_label
-                </string>
                 <string name="pull_to_refresh_from_bottom_release_label" >@string/pull_to_refresh_release_label
+                </string>
+                <string name="pull_to_refresh_from_bottom_refreshing_label" >@string/pull_to_refresh_refreshing_label
                 </string>
             </file>
             <file
                 path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\libraries\pullToRefresh\res\values-ar\pull_refresh_strings.xml"
                 qualifiers="ar" >
-                <string name="pull_to_refresh_release_label" >اترك للتحديث…
-                </string>
                 <string name="pull_to_refresh_pull_label" >اسحب للتحديث…
+                </string>
+                <string name="pull_to_refresh_release_label" >اترك للتحديث…
                 </string>
                 <string name="pull_to_refresh_refreshing_label" >تحميل…
                 </string>

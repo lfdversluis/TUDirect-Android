@@ -3,11 +3,11 @@
     android:layout_width="64dp"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:paddingRight="12dp" >
- 
+    android:paddingRight="12dp">
+
     <ProgressBar
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center" />
- 
+
 </FrameLayout><!-- From: file:/C:/Users/Laurens/Documents/Dropbox/stuffies/android/TUDirect1/app/src/main/res/layout/layout_progress.xml -->
