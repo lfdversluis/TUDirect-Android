@@ -13,12 +13,6 @@ Currently TUDirect contains the following functions:
 * View your course schedule (date, time and location).
 * Find free (computer) workspaces at different locations.
 
-Getting it work
----------------
-As this application perfotms [OAuth 2.0 requests](http://oauth.net/2/), there are some parameters required when requesting sensitive information such as grades or study progress. As these secret parameters are supposed to be well.. secret, they are NOT included in this repository. Below is described how to create a class that will contain all the required paramaters. These parameters can be  requested at the ICT department of the TU Delft.
-
-File: TODO
-
 
 Current state
 ------------
@@ -35,6 +29,10 @@ Some files such as the ``AndroidManifest.xml`` might show still signs of the old
 Everyone is free to do pull requests and if they do improve code, images, comfort, functionality, security, provide updates to new versions of libraries or what not, it will most likely be merged.
 
 Most information should now be in the ``build.graddle`` under the src folder.
+
+OAuth
+---------------
+As this application perfotms [OAuth 2.0 requests](http://oauth.net/2/), there are some parameters required when requesting sensitive information such as grades or study progress. Currently, our paramters are used in the ``MainActivity``. If you want to use your own parameters you can do so by replacing them. These parameters can be  requested at the ICT department of the TU Delft.
 
 License
 -------
