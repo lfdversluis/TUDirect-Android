@@ -1,3 +1,4 @@
+For the iOS version, go to [the other GitHub repository!](https://github.com/devos50/TUDirect-iOS)
 TUDirect-Android
 ================
 
