@@ -55,7 +55,7 @@ public class ValidGradesActivity extends Activity {
     double points = 0.0;
     double pointsEcts = 0.0;
     double ectsTotal = 0.0;
-    int coursesTotal = 0, weightedDecimals = 1, unweightedDecimals = 1;
+    int coursesTotal = 0, decimals = 1, unweightedDecimals = 1;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -121,12 +121,12 @@ public class ValidGradesActivity extends Activity {
     }
 
     public void changeAmountOfDecimals(View v) {
-        weightedDecimals++;
-        weightedDecimals %= 5;
+        decimals++;
+        decimals %= 5;
 
         if (ectsTotal == 0) return;
 
-        if (weightedDecimals == 0) {
+        if (decimals == 0) {
             DecimalFormat df = new DecimalFormat("#");
 
             //Set weighted grade
@@ -136,11 +136,10 @@ public class ValidGradesActivity extends Activity {
             gradeUnweighted.setText(df.format(points / coursesTotal));
         } else {
             // Set weighted
-            DecimalFormat df = new DecimalFormat(comma.substring(0, 2 + weightedDecimals));
+            DecimalFormat df = new DecimalFormat(comma.substring(0, 2 + decimals));
             gradeWeighted.setText(df.format(pointsEcts / ectsTotal));
 
             // Set unweighted
-            df = new DecimalFormat(comma.substring(0, 2 + unweightedDecimals));
             gradeUnweighted.setText(df.format(points / coursesTotal));
         }
     }

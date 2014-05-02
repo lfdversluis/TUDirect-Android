@@ -69,7 +69,6 @@
             android:layout_marginTop="2dp"
             android:layout_weight="0"
             android:clickable="true"
-            android:onClick="changeWeighted"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
