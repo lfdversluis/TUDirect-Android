@@ -1,0 +1,115 @@
+<!-- From: file:/C:/Users/Laurens/Documents/Dropbox/stuffies/android/TUDirect1/app/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="6" android:versionName="1.3.1" package="com.lfdversluis.tudirect">
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:configChanges="orientation|keyboardHidden" android:label="@string/app_name" android:name="com.lfdversluis.tudirect.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Login" android:name="com.lfdversluis.tudirect.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.buildings"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Buildings" android:name="com.lfdversluis.tudirect.BuildingActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.buildings"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Search for Course Information" android:name="com.lfdversluis.tudirect.CourseActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.course"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Building Information" android:name="com.lfdversluis.tudirect.InspectBuildingActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.buildingInfo"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Your Grades" android:name="com.lfdversluis.tudirect.GradesActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.grades"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Your valid Grades" android:name="com.lfdversluis.tudirect.ValidGradesActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.validGrades"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Course Schedule" android:name="com.lfdversluis.tudirect.ScheduleActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.schedule"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Workspaces building list" android:name="com.lfdversluis.tudirect.WorkspaceActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.workspace"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Workspace list" android:name="com.lfdversluis.tudirect.InspectWorkspaceActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.inspectWorkspace"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Workspace Information" android:name="com.lfdversluis.tudirect.WorkspaceInformationActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.workspaceInformation"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Your study progress" android:name="com.lfdversluis.tudirect.StudyProgressActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.studyprogress"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Detailed progress information" android:name="com.lfdversluis.tudirect.StudyProgressInformationActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.studyProgressInformation"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Menu" android:launchMode="singleInstance" android:name="com.lfdversluis.tudirect.MenuActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.menuActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Credits" android:name="com.lfdversluis.tudirect.CreditsActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.creditsActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

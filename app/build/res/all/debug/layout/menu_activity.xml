@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lfdversluis.tudirect.objects.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00A6FF" >
+
+    <Button
+        android:id="@+id/courseSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search"
+        android:onClick="startCourseActivity" />
+
+    <Button
+        android:id="@+id/courseScheduleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/courseschedule"
+        android:onClick="startScheduleActivity" />
+
+    <Button
+        android:id="@+id/gradesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grades"
+        android:onClick="startGradesActivity" />
+
+    <Button
+        android:id="@+id/validGradesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/validgrades"
+        android:onClick="startValidGradesActivity" />
+
+    <Button
+        android:id="@+id/studyProgressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/studyprogress"
+        android:onClick="startStudyProgressActivity" />
+
+    <Button
+        android:id="@+id/buildingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buildings"
+        android:onClick="startBuildingActivity" />
+
+    <Button
+        android:id="@+id/workspacesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/workspaces"
+        android:onClick="startWorkSpaceActivity" />
+
+    <Button
+        android:id="@+id/creditsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/credits"
+        android:onClick="startCreditsActivity" />
+
+</com.lfdversluis.tudirect.objects.DashboardLayout><!-- From: file:/C:/Users/Laurens/Documents/Dropbox/stuffies/android/TUDirect1/app/src/main/res/layout/menu_activity.xml -->

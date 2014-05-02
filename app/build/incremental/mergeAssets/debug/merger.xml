@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="3.2.0" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\build\exploded-aar\com.navercorp.pulltorefresh\library\3.2.0\assets" />
+    </dataSet>
+    <dataSet config="19.1.0" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\src\main\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\src\debug\assets" />
+    </dataSet>
+
+</merger>

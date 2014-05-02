@@ -1,0 +1,7 @@
+<!-- From: file:/C:/Users/Laurens/Documents/Dropbox/stuffies/android/TUDirect1/libraries/pullToRefresh/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2110" android:versionName="2.1.1" package="com.handmark.pulltorefresh.library">
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="16"/>
+
+    <application/>
+
+</manifest>

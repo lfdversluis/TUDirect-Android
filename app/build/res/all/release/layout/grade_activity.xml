@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00A6FF"
+        android:orientation="horizontal"
+        android:onClick="changeWeighted"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/averageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/averageGradeWeighted"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/averageGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="2dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00A6FF"
+        android:orientation="horizontal"
+        android:onClick="changeUnWeighted"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/averageuText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/averageGradeUnweighted"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/averageuGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="2dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="0"
+            android:onClick="changeWeighted"
+            android:clickable="true"/>
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/gradeList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</LinearLayout><!-- From: file:/C:/Users/Laurens/Documents/Dropbox/stuffies/android/TUDirect1/app/src/main/res/layout/grade_activity.xml -->

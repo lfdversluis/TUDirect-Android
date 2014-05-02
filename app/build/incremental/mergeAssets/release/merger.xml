@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="TUDirect1LibrariesPullToRefreshUnspecified.aar" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\build\exploded-bundles\TUDirect1LibrariesPullToRefreshUnspecified.aar\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\src\main\assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\src\release\assets" />
+    </dataSet>
+
+</merger>
