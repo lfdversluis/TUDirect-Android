@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lfdversluis.tudirect">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="Login">
+            <intent-filter>
+                <action android:name="android.intent.action.buildings" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.BuildingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Buildings"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.buildings" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.CourseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Search for Course Information"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.course" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.InspectBuildingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Building Information"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.buildingInfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.GradesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Your Grades"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.grades" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ValidGradesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Your valid Grades"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.validGrades" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ScheduleActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Course Schedule"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.schedule" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WorkspaceActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Workspaces building list"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.workspace" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.InspectWorkspaceActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Workspace list"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.inspectWorkspace" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WorkspaceInformationActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Workspace Information"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.workspaceInformation" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.StudyProgressActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Your study progress"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.studyprogress" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.StudyProgressInformationActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Detailed progress information"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.studyProgressInformation" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MenuActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Menu"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.menuActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.CreditsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Credits"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.creditsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

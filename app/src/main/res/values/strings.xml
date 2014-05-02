@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TUDirect</string>
+    <string name="menu_settings">Menu</string>
+    <string name="search">Search</string>
+    <string name="averageGradeUnweighted">Unweighted average:</string>
+    <string name="averageGradeWeighted">Weighted average:</string>
+
+    <!-- MENU SCREEN TEXT -->
+    <string name="menuTitle">Menu</string>
+    <string name="coursesearch">Course Information</string>
+    <string name="courseschedule">Course schedule</string>
+    <string name="grades">Grade list</string>
+    <string name="validgrades">Valid grades</string>
+    <string name="studyprogress">Study progress</string>
+    <string name="workspaces">Workspaces</string>
+    <string name="buildings">Buildings</string>
+    <string name="credits">Info</string>
+    <string name="creditstext">This app was created by Laurens Versluis.\n
+    All data used in this app was provided as open data by the Technical University of Delft.\n\n
+    Any feedback - suggestions, ideas, improvements, errors - can be sent to improve this app.
+    For more details please refer to the Google Play store.\n\n
+    If you find this app useful, please recommend it to your fellow students.
+    This app is completely free and designed to grant a quick view of your grades and easy access to private and global information,
+    thus sharing is the best way to show your gratitude and improve development.\n\n
+    Version 1.3.1</string>
+
+    <string name="gradeActivityNumDecimals">Number of decimals:</string>
+
+</resources>
