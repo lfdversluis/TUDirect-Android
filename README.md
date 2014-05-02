@@ -19,7 +19,7 @@ Current state
 
 This app was created about 2 years ago during the hackathon of the TU Delft.
 Since then we kept updating and increasing the amount of comfort and useful features, such as showing your weighted and unweighted average.
-We've now decided to open source the app so others can contribute to it as well! Since we are not experts on design (unfortunately), help from others will be much appreciated!
+We've now decided to open source the app so others can contribute to it as well! Since we are not experts on design (unfortunately), help from others will be much appreciated! If you encounter bad coding (style), mock the previous collaborators and show you know better!
 
 Technical details
 -----------------
