@@ -33,7 +33,7 @@ Most information should now be in the ``build.graddle`` under the src folder.
 
 OAuth
 ---------------
-As this application perfotms [OAuth 2.0 requests](http://oauth.net/2/), there are some parameters required when requesting sensitive information such as grades or study progress. Currently, our paramters are used in the ``MainActivity``. If you want to use your own parameters you can do so by replacing them. These parameters can be  requested at the ICT department of the TU Delft.
+As this application performs [OAuth 2.0 requests](http://oauth.net/2/), there are some parameters required when requesting sensitive information such as grades or study progress. Currently, our paramters are used in the ``MainActivity``. If you want to use your own parameters you can do so by replacing them. These parameters can be  requested at the ICT department of the TU Delft.
 
 License
 -------
