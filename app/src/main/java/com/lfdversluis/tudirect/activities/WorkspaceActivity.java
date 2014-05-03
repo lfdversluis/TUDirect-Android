@@ -122,19 +122,11 @@ public class WorkspaceActivity extends ListActivity {
                                 return;
                             }
 
-                            // Creating temporary list, becaue if we initialize it with a size and null values occur in the data, there will be empty (null) values
-                            // In the list and thus crash..
-                            ArrayList<String> tempWorkspaces = new ArrayList<String>();
-                            for (int i = 0; i < list.length(); i++) {
-                                if (!list.isNull(i)) {
-                                    tempWorkspaces.add(list.getJSONObject(i).getString("naamEN"));
-                                }
-                            }
+                            list = removeNulls(list);
 
-                            //Set the workspaces, filling it from the temporary list
-                            workspaces = new String[tempWorkspaces.size()];
-                            for (int i = 0; i < tempWorkspaces.size(); i++) {
-                                workspaces[i] = tempWorkspaces.get(i);
+                            workspaces = new String[list.length()];
+                            for (int i = 0; i < list.length(); i++) {
+                                workspaces[i] = list.getJSONObject(i).getString("naamEN");
                             }
 
                             handler.sendEmptyMessage(1);
@@ -148,6 +140,30 @@ public class WorkspaceActivity extends ListActivity {
                 }
             }
         }).start();
+    }
+
+    // These function below is entirely here because we need to remove
+    // the null objects from the array, else we are going to crash!
+    // Workarounds everywhere!
+    public JSONArray removeNulls(final JSONArray from) {
+        ArrayList<JSONObject> list = new ArrayList<JSONObject>(from.length() - 1);
+
+        for (int i = 0; i < from.length(); i++) {
+            if (from.isNull(i)) continue;
+            try {
+                JSONObject obj = from.getJSONObject(i);
+                list.add(obj);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        final JSONArray ja = new JSONArray();
+        for (final JSONObject obj : list) {
+            ja.put(obj);
+        }
+
+        return ja;
     }
 
     public void error(final String msg) {
