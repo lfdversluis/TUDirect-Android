@@ -2,7 +2,6 @@ package com.lfdversluis.tudirect.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -31,7 +30,6 @@ public class SplashScreenActivity extends Activity {
             @Override
             public void run() {
                 if (!mIsBackButtonPressed) {
-                    SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
                     // Redirect to Menu
                     startActivity(new Intent(SplashScreenActivity.this, MenuActivity.class));
 

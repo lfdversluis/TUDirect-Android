@@ -22,8 +22,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.lfdversluis.tudirect" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="Fixed a null pointer exception with the flow of activity methods">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java" />
+    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="Removed debugging logs">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -137,8 +136,8 @@
       <file leaf-file-name="SplashScreenActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55791503" vertical-offset="102" max-vertical-offset="765">
-              <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.0984556" vertical-offset="0" max-vertical-offset="850">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -1651,8 +1650,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java" />
       </list>
     </option>
   </component>
@@ -2169,7 +2168,11 @@
       <created>1399207256279</created>
       <updated>1399207256279</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Removed debugging logs">
+      <created>1399207353495</created>
+      <updated>1399207353495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2276,7 +2279,8 @@
     <MESSAGE value="The workspace list is now filtered on null values first since they exist in the JSON returned by the API.&#10;Fixed #1&#10;Also updated the string to version 1.3.2 in the info screen" />
     <MESSAGE value="Changed the onKeyUp method and added override annotation.&#10;Deleted a work around since it's fixed in the API.&#10;Changed the way the activities close to open the gate keeper" />
     <MESSAGE value="Fixed a null pointer exception with the flow of activity methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a null pointer exception with the flow of activity methods" />
+    <MESSAGE value="Removed debugging logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed debugging logs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -2689,8 +2693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55791503" vertical-offset="102" max-vertical-offset="765">
-          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+        <state vertical-scroll-proportion="0.0984556" vertical-offset="0" max-vertical-offset="850">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding />
         </state>
       </provider>
