@@ -54,7 +54,7 @@ public class ValidGradesActivity extends Activity {
     double points = 0.0;
     double pointsEcts = 0.0;
     double ectsTotal = 0.0;
-    int coursesTotal = 0, decimals = 1, unweightedDecimals = 1;
+    int coursesTotal = 0, decimals = 1;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
