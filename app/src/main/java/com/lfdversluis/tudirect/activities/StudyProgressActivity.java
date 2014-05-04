@@ -73,43 +73,36 @@ public class StudyProgressActivity extends ListActivity {
         SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
         token = pref.getString("token", null);
 
+        setContentView(R.layout.layout_refreshlist);
+        progressList = (PullToRefreshListView) findViewById(R.id.refreshList);
 
-        // Check if a token is set.
-        if (token == null || token.length() == 0) {
-            startActivity(new Intent(StudyProgressActivity.this, MainActivity.class));
-        } else {
+        studies = new ArrayList<String>(5);
 
-            setContentView(R.layout.layout_refreshlist);
-            progressList = (PullToRefreshListView) findViewById(R.id.refreshList);
+        progressList.setOnRefreshListener(new OnRefreshListener<ListView>() {
+            @Override
+            public void onRefresh(final PullToRefreshBase<ListView> lv) {
+                retrieveProgress();
+            }
+        });
 
-            studies = new ArrayList<String>(5);
-
-            progressList.setOnRefreshListener(new OnRefreshListener<ListView>() {
-                @Override
-                public void onRefresh(final PullToRefreshBase<ListView> lv) {
-                    retrieveProgress();
+        progressList.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                position--;
+                Intent intent = new Intent(StudyProgressActivity.this, StudyProgressInformationActivity.class);
+                try {
+                    intent.putExtra("programName", studies.get(position));
+                    intent.putExtra("program", list.getJSONObject(position).getString("opleiding_naam_en") + "/" + list.getJSONObject(position).getString("opleiding_naam"));
+                    intent.putExtra("examProgram", list.getJSONObject(position).getString("examenprogramma_naam_en") + "/" + list.getJSONObject(position).getString("examenprogramma_naam"));
+                    intent.putExtra("examType", list.getJSONObject(position).getString("examentype_omschrijving_en") + "/" + list.getJSONObject(position).getString("examentype_omschrijving"));
+                    intent.putExtra("pointsRequired", list.getJSONObject(position).getString("minimum_punten_examenprogramma"));
+                    intent.putExtra("pointsNow", list.getJSONObject(position).getString("behaalde_punten_basisprogramma"));
+                    intent.putExtra("satisfied", list.getJSONObject(position).getString("voldaan"));
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            });
-
-            progressList.setOnItemClickListener(new OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    position--;
-                    Intent intent = new Intent(StudyProgressActivity.this, StudyProgressInformationActivity.class);
-                    try {
-                        intent.putExtra("programName", studies.get(position));
-                        intent.putExtra("program", list.getJSONObject(position).getString("opleiding_naam_en") + "/" + list.getJSONObject(position).getString("opleiding_naam"));
-                        intent.putExtra("examProgram", list.getJSONObject(position).getString("examenprogramma_naam_en") + "/" + list.getJSONObject(position).getString("examenprogramma_naam"));
-                        intent.putExtra("examType", list.getJSONObject(position).getString("examentype_omschrijving_en") + "/" + list.getJSONObject(position).getString("examentype_omschrijving"));
-                        intent.putExtra("pointsRequired", list.getJSONObject(position).getString("minimum_punten_examenprogramma"));
-                        intent.putExtra("pointsNow", list.getJSONObject(position).getString("behaalde_punten_basisprogramma"));
-                        intent.putExtra("satisfied", list.getJSONObject(position).getString("voldaan"));
-                        startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-        }
+            }
+        });
     }
 
     public void retrieveProgress() {
@@ -212,6 +205,11 @@ public class StudyProgressActivity extends ListActivity {
         super.onResume();
         SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
         token = pref.getString("token", null);
-        retrieveProgress();
+        // Check if a token is set, if not redirect to the Main Activity
+        if (token == null || token.length() == 0) {
+            startActivity(new Intent(StudyProgressActivity.this, MainActivity.class));
+        } else {
+            retrieveProgress();
+        }
     }
 }

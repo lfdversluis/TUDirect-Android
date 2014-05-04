@@ -60,7 +60,7 @@ public class ValidGradesActivity extends Activity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    if(dialog.isShowing()) {
+                    if (dialog.isShowing()) {
                         dialog.dismiss();
                     }
                     Collections.sort(wrap);
@@ -95,27 +95,23 @@ public class ValidGradesActivity extends Activity {
         token = pref.getString("token", null);
 
         // Token is ongeldig, gebruiker moet inloggen
-        if (token == null || token.length() == 0) {
-            startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
-        } else {
-            wrap = new ArrayList<CourseWrap>(40);
-            customAdapter = new GradeAdapter(this, wrap);
+        wrap = new ArrayList<CourseWrap>(40);
+        customAdapter = new GradeAdapter(this, wrap);
 
-            gradeList.setOnRefreshListener(new OnRefreshListener<ListView>() {
-                @Override
-                public void onRefresh(final PullToRefreshBase<ListView> lv) {
-                    retrieveGrades();
-                }
-            });
+        gradeList.setOnRefreshListener(new OnRefreshListener<ListView>() {
+            @Override
+            public void onRefresh(final PullToRefreshBase<ListView> lv) {
+                retrieveGrades();
+            }
+        });
 
-            gradeList.setOnItemClickListener(new OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(ValidGradesActivity.this, CourseActivity.class);
-                    intent.putExtra("courseId", wrap.get(position - 1).getCourseId());
-                    startActivity(intent);
-                }
-            });
-        }
+        gradeList.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ValidGradesActivity.this, CourseActivity.class);
+                intent.putExtra("courseId", wrap.get(position - 1).getCourseId());
+                startActivity(intent);
+            }
+        });
     }
 
     public void changeAmountOfDecimals(View v) {
@@ -172,11 +168,11 @@ public class ValidGradesActivity extends Activity {
                             JSONTokener tokener = new JSONTokener(json);
                             JSONObject object = (JSONObject) tokener.nextValue();
 
-                            if(! object.isNull("error")){
+                            if (!object.isNull("error")) {
                                 String error = object.getString("error");
-                                if(error.matches("token_expired")){
+                                if (error.matches("token_expired")) {
                                     startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
-                                    if(dialog.isShowing()) {
+                                    if (dialog.isShowing()) {
                                         dialog.dismiss();
                                     }
                                 }
@@ -210,11 +206,11 @@ public class ValidGradesActivity extends Activity {
                         error("The server responded with code (" + responseCode + "), your token might be invalid or the server is temporarily unavailable.");
                     }
                 } catch (JSONException j) {
-                    if(dialog.isShowing()) {
+                    if (dialog.isShowing()) {
                         dialog.dismiss();
                     }
                 } catch (Exception e) {
-                    if(dialog.isShowing()) {
+                    if (dialog.isShowing()) {
                         dialog.dismiss();
                     }
                     error("An error occurred while parsing your grades, if the problem persists please submit a bug report.");
@@ -226,7 +222,7 @@ public class ValidGradesActivity extends Activity {
     public void error(final String err) {
         runOnUiThread(new Runnable() {
             public void run() {
-                if(dialog.isShowing()) {
+                if (dialog.isShowing()) {
                     dialog.dismiss();
                 }
                 gradeList.onRefreshComplete();
@@ -254,10 +250,15 @@ public class ValidGradesActivity extends Activity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
         token = pref.getString("token", null);
-        retrieveGrades();
+        // Check if a token is set, if not redirect to the Main Activity
+        if (token == null || token.length() == 0) {
+            startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
+        } else {
+            retrieveGrades();
+        }
     }
 }
