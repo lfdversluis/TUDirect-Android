@@ -115,7 +115,7 @@ public class CourseActivity extends Activity {
             if (responseCode == 200) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "iso-8859-1"));
                 StringBuilder sb = new StringBuilder();
-                String aux = "";
+                String aux;
                 while ((aux = reader.readLine()) != null) {
                     sb.append(aux);
                 }

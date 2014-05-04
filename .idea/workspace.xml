@@ -22,8 +22,27 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.lfdversluis.tudirect" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="Removed redundant calls for the oath-token">
+    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="Removed unused integer declaration">
+      <change type="DELETED" beforePath="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\build\pre-dexed\release\classes-7e70fcf6e942ba81c739ac2a0df276955f5cfc3b.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1\app\build\pre-dexed\release\support-v4-19.0.1-738e19aa080be1a6eebf7670737e29e2796ef5d1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.apk" afterPath="$PROJECT_DIR$/app/app.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/buildConfig/release/com/lfdversluis/tudirect/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/source/buildConfig/release/com/lfdversluis/tudirect/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/pullToRefresh/build/source/buildConfig/release/com/handmark/pulltorefresh/library/BuildConfig.java" afterPath="$PROJECT_DIR$/libraries/pullToRefresh/build/source/buildConfig/release/com/handmark/pulltorefresh/library/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/BuildingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/BuildingActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/release/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/release/com/handmark/pulltorefresh/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/release/com/lfdversluis/tudirect/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/release/com/lfdversluis/tudirect/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/pullToRefresh/build/source/r/release/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/libraries/pullToRefresh/build/source/r/release/com/handmark/pulltorefresh/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/pullToRefresh/pullToRefresh.iml" afterPath="$PROJECT_DIR$/libraries/pullToRefresh/pullToRefresh.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TUDirect.iws" />
@@ -87,36 +106,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ValidGradesActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java">
+      <file leaf-file-name="MenuActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MenuActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="3604">
-              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="850">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GradesActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java">
+      <file leaf-file-name="ScheduleActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="2907">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-              <folding>
-                <element signature="e#1593#2050#0" expanded="true" />
-                <element signature="e#2043#2044#0" expanded="true" />
-                <element signature="e#3453#7229#0" expanded="true" />
-                <element signature="e#7218#7219#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1205" max-vertical-offset="2516">
+              <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudyProgressActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java">
+      <file leaf-file-name="WorkspaceActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22972973" vertical-offset="663" max-vertical-offset="3502">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="2584">
+              <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkspaceInformationActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceInformationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.032818533" vertical-offset="306" max-vertical-offset="1853">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SplashScreenActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,11 +158,51 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="StudyProgressInformationActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressInformationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="1989">
+              <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1052" max-vertical-offset="3230">
+              <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InspectBuildingActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="2805">
+              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InspectWorkspaceActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1137" max-vertical-offset="2465">
+              <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1955">
-              <caret line="102" column="121" selection-start-line="102" selection-start-column="121" selection-end-line="102" selection-end-column="121" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="1955">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -1630,19 +1704,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/objects/CourseWrap.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceInformationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressInformationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CreditsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/BuildingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/BuildingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java" />
       </list>
     </option>
   </component>
@@ -2171,7 +2245,11 @@
       <created>1399207446378</created>
       <updated>1399207446378</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Removed unused integer declaration">
+      <created>1399207491106</created>
+      <updated>1399207491106</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2208,7 +2286,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19210246" sideWeight="0.5005549" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19169329" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2046875" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275488" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4078091" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2281,7 +2359,8 @@
     <MESSAGE value="Removed debugging logs" />
     <MESSAGE value="removed the share preferences" />
     <MESSAGE value="Removed redundant calls for the oath-token" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant calls for the oath-token" />
+    <MESSAGE value="Removed unused integer declaration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused integer declaration" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -2569,53 +2648,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceInformationActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1318" max-vertical-offset="1853">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1647" max-vertical-offset="3621">
+          <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2049" max-vertical-offset="2584">
-          <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1069" max-vertical-offset="2907">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="e#1593#2050#0" expanded="true" />
+            <element signature="e#2043#2044#0" expanded="true" />
+            <element signature="e#3453#7224#0" expanded="true" />
+            <element signature="e#7213#7214#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1964" max-vertical-offset="2516">
-          <caret line="188" column="28" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressInformationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1454" max-vertical-offset="1989">
-          <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="3502">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/BuildingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7046332" vertical-offset="1726" max-vertical-offset="2261">
-          <caret line="170" column="28" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
-          <folding>
-            <element signature="e#1391#1960#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7046332" vertical-offset="2695" max-vertical-offset="3230">
-          <caret line="236" column="26" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="2210">
+          <caret line="115" column="34" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -2630,18 +2697,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/CourseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1052" max-vertical-offset="3230">
+          <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectBuildingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7046332" vertical-offset="2270" max-vertical-offset="2805">
-          <caret line="195" column="35" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="2805">
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/InspectWorkspaceActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7046332" vertical-offset="1930" max-vertical-offset="2465">
-          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1137" max-vertical-offset="2465">
+          <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="1955">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -2654,50 +2737,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ScheduleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1205" max-vertical-offset="2516">
+          <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/SplashScreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0984556" vertical-offset="0" max-vertical-offset="850">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/ValidGradesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="3604">
-          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/GradesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="2907">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-          <folding>
-            <element signature="e#1593#2050#0" expanded="true" />
-            <element signature="e#2043#2044#0" expanded="true" />
-            <element signature="e#3453#7229#0" expanded="true" />
-            <element signature="e#7218#7219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1955">
-          <caret line="102" column="121" selection-start-line="102" selection-start-column="121" selection-end-line="102" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22972973" vertical-offset="663" max-vertical-offset="3502">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/StudyProgressInformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="1989">
+          <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="2584">
+          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lfdversluis/tudirect/activities/WorkspaceInformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.032818533" vertical-offset="306" max-vertical-offset="1853">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

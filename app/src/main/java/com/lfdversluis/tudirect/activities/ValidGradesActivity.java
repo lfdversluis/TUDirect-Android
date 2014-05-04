@@ -54,7 +54,8 @@ public class ValidGradesActivity extends Activity {
     double points = 0.0;
     double pointsEcts = 0.0;
     double ectsTotal = 0.0;
-    int coursesTotal = 0, decimals = 1;
+    int coursesTotal = 0;
+    int decimals = 1;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -155,7 +156,7 @@ public class ValidGradesActivity extends Activity {
                     if (responseCode == 200) {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
                         StringBuilder sb = new StringBuilder();
-                        String aux = "";
+                        String aux;
                         while ((aux = reader.readLine()) != null) {
                             sb.append(aux);
                         }
