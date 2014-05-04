@@ -32,7 +32,6 @@ public class SplashScreenActivity extends Activity {
             public void run() {
                 if (!mIsBackButtonPressed) {
                     SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
-                    pref.edit().putString("token", null).commit();
                     // Redirect to Menu
                     startActivity(new Intent(SplashScreenActivity.this, MenuActivity.class));
 

@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -102,7 +101,6 @@ public class MainActivity extends Activity {
 									if(json != null){
 										JSONTokener tokener = new JSONTokener(json);
 										final String token = ((JSONObject)tokener.nextValue()).getString("access_token");
-                                        Log.e("token", token);
 										getSharedPreferences("loginToken",MODE_PRIVATE)
 										.edit()
 										.putString("token", token)
