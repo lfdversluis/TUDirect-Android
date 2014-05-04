@@ -49,16 +49,17 @@ public class GradesActivity extends ListActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     Collections.sort(wrap);
                     gradeList.setAdapter(customAdapter);
-                    dialog.dismiss();
                     gradeList.onRefreshComplete();
                     break;
             }
         }
     };
     JSONArray list;
-    StringBuffer buffer;
     Dialog dialog = null;
     private String token;
     private HttpClient httpclient;
@@ -80,12 +81,9 @@ public class GradesActivity extends ListActivity {
         // Check if a token is set, if not redirect to the Main Activity
         if (token == null || token.length() == 0) {
             startActivity(new Intent(GradesActivity.this, MainActivity.class));
-            finish();
         } else {
             wrap = new ArrayList<CourseWrap>(40);
             customAdapter = new GradeAdapter(this, wrap);
-
-            retrieveGrades();
 
             gradeList.setOnRefreshListener(new OnRefreshListener<ListView>() {
                 @Override
@@ -133,18 +131,31 @@ public class GradesActivity extends ListActivity {
 
                         if (json.length() > 0) {
                             JSONTokener tokener = new JSONTokener(json);
-                            list = ((JSONObject) tokener.nextValue()).getJSONObject("studieresultaatLijst").getJSONArray("studieresultaat");
+                            JSONObject object = (JSONObject) tokener.nextValue();
 
-                            for (int i = 0; i < list.length(); i++) {
-                                boolean sufficient = list.getJSONObject(i).getBoolean("voldoende");
-                                String grade = list.getJSONObject(i).getString("resultaat");
-                                String courseID = list.getJSONObject(i).getString("cursusid");
-                                String mutationDate = list.getJSONObject(i).getString("mutatiedatum");
-                                // API no longer provides ECTS in gradesactivity, changed with an hidden update
-                                String ects = "-";
-                                wrap.add(new CourseWrap(sufficient, courseID, grade, mutationDate, ects));
+                            if(! object.isNull("error")){
+                                String error = object.getString("error");
+                                if(error.matches("token_expired")){
+                                    startActivity(new Intent(GradesActivity.this, MainActivity.class));
+                                    if(dialog.isShowing()) {
+                                        dialog.dismiss();
+                                    }
+                                }
                             }
-                            handler.sendEmptyMessage(1);
+                            else {
+                                list = object.getJSONObject("studieresultaatLijst").getJSONArray("studieresultaat");
+
+                                for (int i = 0; i < list.length(); i++) {
+                                    boolean sufficient = list.getJSONObject(i).getBoolean("voldoende");
+                                    String grade = list.getJSONObject(i).getString("resultaat");
+                                    String courseID = list.getJSONObject(i).getString("cursusid");
+                                    String mutationDate = list.getJSONObject(i).getString("mutatiedatum");
+                                    // API no longer provides ECTS in gradesactivity, changed with an hidden update
+                                    String ects = "-";
+                                    wrap.add(new CourseWrap(sufficient, courseID, grade, mutationDate, ects));
+                                }
+                                handler.sendEmptyMessage(1);
+                            }
                         } else {
                             error("The server responded with no message to read.");
                         }
@@ -152,17 +163,13 @@ public class GradesActivity extends ListActivity {
                         error("The server responded with code (" + responseCode + "), your token might be invalid or the server is temporarily unavailable.");
                     }
                 } catch (JSONException j) {
-                    dialog.dismiss();
-                    // Terrible work around for the fact that the token is no longer valid.
-                    // The JSON is malformed and does not contain a ':'
-                    // causing the parser to throw an exception
-                    // and hence we know we should ask for a new Token...
-                    // And yes, if the user is logged in and the server keeps sending bad JSON it will be an infinite loop...
-                    // Can't do much about an error in the API, right?
-                    startActivity(new Intent(GradesActivity.this, MainActivity.class));
-                    finish();
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     error("An error was thrown while parsing your grades, if the problem persists please submit a bug report.");
                 }
             }
@@ -172,7 +179,9 @@ public class GradesActivity extends ListActivity {
     public void error(final String err) {
         runOnUiThread(new Runnable() {
             public void run() {
-                dialog.dismiss();
+                if(dialog.isShowing()) {
+                    dialog.dismiss();
+                }
                 gradeList.onRefreshComplete();
                 AlertDialog.Builder builder = new AlertDialog.Builder(GradesActivity.this);
                 builder.setTitle("An error has occurred.");
@@ -188,11 +197,20 @@ public class GradesActivity extends ListActivity {
         });
     }
 
+    @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             startActivity(new Intent(this, MenuActivity.class));
-            finish();
+            GradesActivity.this.finish();
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
+        token = pref.getString("token", null);
+        retrieveGrades();
     }
 }

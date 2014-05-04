@@ -230,10 +230,11 @@ public class CourseActivity extends Activity {
         });
     }
 
+    @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             startActivity(new Intent(this, MenuActivity.class));
-            finish();
+            CourseActivity.this.finish();
         }
         return super.onKeyUp(keyCode, event);
     }

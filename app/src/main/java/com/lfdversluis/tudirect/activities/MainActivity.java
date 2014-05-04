@@ -5,11 +5,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -57,7 +55,7 @@ public class MainActivity extends Activity {
 		webview.getSettings().setJavaScriptEnabled(true);
 		webview.loadUrl(callaccess);
 
-		webview.setWebViewClient(new WebViewClient() {  
+		webview.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onLoadResource(WebView view, String url)
 			{
@@ -71,7 +69,7 @@ public class MainActivity extends Activity {
 					final String accesscode = url.substring(11, url.length());
 					//Start the authenticating process
 					new Thread(new Runnable() {
-						public void run() {                       
+						public void run() {
 							try{
 								HttpParams httpPar = new BasicHttpParams();
 								HttpConnectionParams.setConnectionTimeout(httpPar, 45 * 1000);
@@ -91,7 +89,7 @@ public class MainActivity extends Activity {
 								// Add the second header - see OAUTH2 protocol.
 								httppost.setHeader("Authorization: Basic ", new String(Base64.encode((clientid+ ":" +clientsecret).getBytes(), Base64.URL_SAFE|Base64.NO_WRAP),"UTF-8"));
 								// Execute HTTP Post Request
-								response=httpclient.execute(httppost);
+								response = httpclient.execute(httppost);
 
 								// Retrieve the response code of the request.
 								final int responseCode = response.getStatusLine().getStatusCode();
@@ -104,50 +102,29 @@ public class MainActivity extends Activity {
 									if(json != null){
 										JSONTokener tokener = new JSONTokener(json);
 										final String token = ((JSONObject)tokener.nextValue()).getString("access_token");
+                                        Log.e("token", token);
 										getSharedPreferences("loginToken",MODE_PRIVATE)
 										.edit()
 										.putString("token", token)
 										.commit();
-										
-										new Thread(new Runnable() {
-											public void run() {
-												try{
-													HttpParams httpPar = new BasicHttpParams();
-													HttpConnectionParams.setConnectionTimeout(httpPar, 45 * 1000);
-													HttpConnectionParams.setSoTimeout(httpPar, 45 * 1000);
-													httpclient=new DefaultHttpClient(httpPar);
-													httppost= new HttpPost("http://ios-dev.no-ip.org/tudirect/storetoken.php");
-													
-													// Add token
-													nameValuePairs = new ArrayList<NameValuePair>(1);
-													nameValuePairs.add(new BasicNameValuePair("token",token));
-													httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-													
-													//Execute HTTP Post Request
-													response=httpclient.execute(httppost);
-												}
-												catch(Exception e){}
-											}
-											}).start();
-										
-										// Now that token has been set, time to redirect the user!
-										startActivity(new Intent(MainActivity.this, MenuActivity.class));
-										finish();
+
+										// Now that token has been set, time to close this screen and
+                                        // go back to where we came from.
+                                        MainActivity.this.finish();
 									}
 								}
 								else{
-									Log.e("code was:",responseCode+"");
 									error();
 								}
 							}catch(Exception e){
-								error();                
+								error();
 							}
 						}
 					}).start();
 				}
 				else {
 					super.onLoadResource(view, url);
-				}           
+				}
 			}
 		});
 	}
@@ -163,9 +140,9 @@ public class MainActivity extends Activity {
 				.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 					}
-				});                     
+				});
 				AlertDialog alert = builder.create();
-				alert.show();  
+				alert.show();
 			}
 		});
 	}

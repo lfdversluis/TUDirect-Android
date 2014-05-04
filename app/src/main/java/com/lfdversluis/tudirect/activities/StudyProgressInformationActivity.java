@@ -119,10 +119,11 @@ public class StudyProgressInformationActivity extends Activity {
         });
     }
 
+    @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             startActivity(new Intent(this, MenuActivity.class));
-            finish();
+            StudyProgressInformationActivity.this.finish();
         }
         return super.onKeyUp(keyCode, event);
     }

@@ -50,9 +50,11 @@ public class StudyProgressActivity extends ListActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     progressList.setAdapter(customAdapter);
                     setListAdapter(new ArrayAdapter<String>(StudyProgressActivity.this, R.layout.list_activity, studies));
-                    dialog.dismiss();
                     progressList.onRefreshComplete();
                     break;
             }
@@ -72,18 +74,15 @@ public class StudyProgressActivity extends ListActivity {
         token = pref.getString("token", null);
 
 
-        //token rage!
+        // Check if a token is set.
         if (token == null || token.length() == 0) {
             startActivity(new Intent(StudyProgressActivity.this, MainActivity.class));
-            finish();
         } else {
 
             setContentView(R.layout.layout_refreshlist);
             progressList = (PullToRefreshListView) findViewById(R.id.refreshList);
 
-            studies = new ArrayList<String>(10);
-
-            retrieveProgress();
+            studies = new ArrayList<String>(5);
 
             progressList.setOnRefreshListener(new OnRefreshListener<ListView>() {
                 @Override
@@ -142,28 +141,36 @@ public class StudyProgressActivity extends ListActivity {
                         if (json.length() > 0) {
                             studies.clear();
                             JSONTokener tokener = new JSONTokener(json);
-                            list = ((JSONObject) tokener.nextValue()).getJSONObject("getStudievoortgangByStudentnummerResponse").getJSONArray("studievoortgang");
+                            JSONObject object = (JSONObject) tokener.nextValue();
 
-                            for (int i = 0; i < list.length(); i++) {
-                                studies.add(list.getJSONObject(i).getString("examenprogramma_naam_en") + "/" + list.getJSONObject(i).getString("examenprogramma_naam"));
+                            if (!object.isNull("error")) {
+                                String error = object.getString("error");
+                                if (error.matches("token_expired")) {
+                                    startActivity(new Intent(StudyProgressActivity.this, MainActivity.class));
+                                    if (dialog.isShowing()) {
+                                        dialog.dismiss();
+                                    }
+                                }
+                            } else {
+                                list = object.getJSONObject("getStudievoortgangByStudentnummerResponse").getJSONArray("studievoortgang");
+
+                                for (int i = 0; i < list.length(); i++) {
+                                    studies.add(list.getJSONObject(i).getString("examenprogramma_naam_en") + "/" + list.getJSONObject(i).getString("examenprogramma_naam"));
+                                }
+                                handler.sendEmptyMessage(1);
                             }
-                            handler.sendEmptyMessage(1);
                         }
                     } else {
                         error();
                     }
                 } catch (JSONException j) {
-                    dialog.dismiss();
-                    // Terrible work around for the fact that the token is no longer valid.
-                    // The JSON is malformed and does not contain a ':'
-                    // causing the parser to throw an exception
-                    // And hence we know we should ask for a new Token...
-                    // And yes, if the user is logged in and the server keeps sending bad JSON it will be an infinite loop...
-                    // Can't do much about an error in the API, right?
-                    startActivity(new Intent(StudyProgressActivity.this, MainActivity.class));
-                    finish();
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     error();
                 }
             }
@@ -173,7 +180,9 @@ public class StudyProgressActivity extends ListActivity {
     public void error() {
         runOnUiThread(new Runnable() {
             public void run() {
-                dialog.dismiss();
+                if (dialog.isShowing()) {
+                    dialog.dismiss();
+                }
                 progressList.onRefreshComplete();
                 AlertDialog.Builder builder = new AlertDialog.Builder(StudyProgressActivity.this);
                 builder.setTitle("An error has occurred.");
@@ -189,11 +198,20 @@ public class StudyProgressActivity extends ListActivity {
         });
     }
 
+    @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             startActivity(new Intent(this, MenuActivity.class));
-            finish();
+            StudyProgressActivity.this.finish();
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
+        token = pref.getString("token", null);
+        retrieveProgress();
     }
 }

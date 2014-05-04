@@ -10,7 +10,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,12 +60,14 @@ public class ValidGradesActivity extends Activity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     Collections.sort(wrap);
                     gradeList.setAdapter(customAdapter);
                     DecimalFormat df = new DecimalFormat("#.0");
                     gradeWeighted.setText(df.format(pointsEcts / ectsTotal));
                     gradeUnweighted.setText(df.format(points / coursesTotal));
-                    dialog.dismiss();
                     gradeList.onRefreshComplete();
                     break;
             }
@@ -96,12 +97,9 @@ public class ValidGradesActivity extends Activity {
         // Token is ongeldig, gebruiker moet inloggen
         if (token == null || token.length() == 0) {
             startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
-            finish();
         } else {
             wrap = new ArrayList<CourseWrap>(40);
             customAdapter = new GradeAdapter(this, wrap);
-
-            retrieveGrades();
 
             gradeList.setOnRefreshListener(new OnRefreshListener<ListView>() {
                 @Override
@@ -172,27 +170,39 @@ public class ValidGradesActivity extends Activity {
 
                         if (json.length() > 0) {
                             JSONTokener tokener = new JSONTokener(json);
-                            list = ((JSONObject) tokener.nextValue()).getJSONObject("studieresultaatLijst").getJSONArray("studieresultaat");
+                            JSONObject object = (JSONObject) tokener.nextValue();
 
-                            //comma notation formatter
-                            DecimalFormat format = new DecimalFormat("#.#", new DecimalFormatSymbols(Locale.FRANCE));
-
-                            for (int i = 0; i < list.length(); i++) {
-                                boolean suf = list.getJSONObject(i).getBoolean("voldoende");
-                                String grade = list.getJSONObject(i).getString("resultaat");
-                                String courseid = list.getJSONObject(i).getString("cursusid");
-                                String mutationDate = list.getJSONObject(i).getString("mutatiedatum");
-                                String ects = list.getJSONObject(i).getString("ectspunten");
-
-                                if (grade.matches("[0-9.,]+")) {
-                                    points += format.parse(grade).doubleValue();
-                                    ectsTotal += format.parse(list.getJSONObject(i).getString("ectspunten")).doubleValue();
-                                    pointsEcts += ((format.parse(list.getJSONObject(i).getString("ectspunten")).doubleValue()) * (format.parse(grade).doubleValue()));
-                                    coursesTotal++;
+                            if(! object.isNull("error")){
+                                String error = object.getString("error");
+                                if(error.matches("token_expired")){
+                                    startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
+                                    if(dialog.isShowing()) {
+                                        dialog.dismiss();
+                                    }
                                 }
-                                wrap.add(new CourseWrap(suf, courseid, grade, mutationDate, ects));
+                            } else {
+                                list = object.getJSONObject("studieresultaatLijst").getJSONArray("studieresultaat");
+
+                                //comma notation formatter
+                                DecimalFormat format = new DecimalFormat("#.#", new DecimalFormatSymbols(Locale.FRANCE));
+
+                                for (int i = 0; i < list.length(); i++) {
+                                    boolean suf = list.getJSONObject(i).getBoolean("voldoende");
+                                    String grade = list.getJSONObject(i).getString("resultaat");
+                                    String courseid = list.getJSONObject(i).getString("cursusid");
+                                    String mutationDate = list.getJSONObject(i).getString("mutatiedatum");
+                                    String ects = list.getJSONObject(i).getString("ectspunten");
+
+                                    if (grade.matches("[0-9.,]+")) {
+                                        points += format.parse(grade).doubleValue();
+                                        ectsTotal += format.parse(list.getJSONObject(i).getString("ectspunten")).doubleValue();
+                                        pointsEcts += ((format.parse(list.getJSONObject(i).getString("ectspunten")).doubleValue()) * (format.parse(grade).doubleValue()));
+                                        coursesTotal++;
+                                    }
+                                    wrap.add(new CourseWrap(suf, courseid, grade, mutationDate, ects));
+                                }
+                                handler.sendEmptyMessage(1);
                             }
-                            handler.sendEmptyMessage(1);
                         } else {
                             error("The server responded with no message to read.");
                         }
@@ -200,18 +210,13 @@ public class ValidGradesActivity extends Activity {
                         error("The server responded with code (" + responseCode + "), your token might be invalid or the server is temporarily unavailable.");
                     }
                 } catch (JSONException j) {
-                    dialog.dismiss();
-                    // Terrible work around for the fact that the token is no longer valid.
-                    // The JSON is malformed and does not contain a ':'
-                    // causing the parser to throw an exception
-                    // And hence we know we should ask for a new Token...
-                    // And yes, if the user is logged in and the server keeps sending bad JSON it will be an infinite loop...
-                    // Can't do much about an error in the API, right?
-                    Log.e("JSON", j.getMessage().toString());
-                    startActivity(new Intent(ValidGradesActivity.this, MainActivity.class));
-                    finish();
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    if(dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     error("An error occurred while parsing your grades, if the problem persists please submit a bug report.");
                 }
             }
@@ -221,7 +226,9 @@ public class ValidGradesActivity extends Activity {
     public void error(final String err) {
         runOnUiThread(new Runnable() {
             public void run() {
-                dialog.dismiss();
+                if(dialog.isShowing()) {
+                    dialog.dismiss();
+                }
                 gradeList.onRefreshComplete();
                 AlertDialog.Builder builder = new AlertDialog.Builder(ValidGradesActivity.this);
                 builder.setTitle("An error has occurred.");
@@ -237,11 +244,20 @@ public class ValidGradesActivity extends Activity {
         });
     }
 
+    @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             startActivity(new Intent(this, MenuActivity.class));
-            finish();
+            ValidGradesActivity.this.finish();
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
+        token = pref.getString("token", null);
+        retrieveGrades();
     }
 }
