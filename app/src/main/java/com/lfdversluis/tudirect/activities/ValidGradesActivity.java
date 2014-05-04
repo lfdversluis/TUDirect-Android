@@ -91,9 +91,6 @@ public class ValidGradesActivity extends Activity {
         gradeUnweighted = (TextView) findViewById(R.id.averageuGrade);
         gradeWeighted = (TextView) findViewById(R.id.averageGrade);
 
-        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
-        token = pref.getString("token", null);
-
         // Token is ongeldig, gebruiker moet inloggen
         wrap = new ArrayList<CourseWrap>(40);
         customAdapter = new GradeAdapter(this, wrap);

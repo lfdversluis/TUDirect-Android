@@ -74,9 +74,6 @@ public class GradesActivity extends ListActivity {
         setContentView(R.layout.layout_refreshlist);
         gradeList = (PullToRefreshListView) findViewById(R.id.refreshList);
 
-        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
-        token = pref.getString("token", null);
-
         wrap = new ArrayList<CourseWrap>(40);
         customAdapter = new GradeAdapter(this, wrap);
 

@@ -70,9 +70,6 @@ public class StudyProgressActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref = getSharedPreferences("loginToken", MODE_PRIVATE);
-        token = pref.getString("token", null);
-
         setContentView(R.layout.layout_refreshlist);
         progressList = (PullToRefreshListView) findViewById(R.id.refreshList);
 
