@@ -15,7 +15,7 @@ import com.lfdversluis.tudirect.R;
 public class StudyProgressInformationActivity extends Activity {
 
     String programName, program, examProgram, examType, satisfied;
-    int pointsRequired, pointsNow;
+    double pointsRequired, pointsNow;
     LinearLayout studyProgressLayout;
 
     @Override
@@ -32,8 +32,8 @@ public class StudyProgressInformationActivity extends Activity {
             program = extras.getString("program");
             examProgram = extras.getString("examProgram");
             examType = extras.getString("examType");
-            pointsRequired = Integer.parseInt(extras.getString("pointsRequired"));
-            pointsNow = Integer.parseInt(extras.getString("pointsNow"));
+            pointsRequired = Double.parseDouble(extras.getString("pointsRequired"));
+            pointsNow = Double.parseDouble(extras.getString("pointsNow"));
             satisfied = extras.getString("satisfied");
 
             //Display information on the screen.
