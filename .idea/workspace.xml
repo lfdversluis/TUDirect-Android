@@ -22,7 +22,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.lfdversluis.tudirect" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="added proguard">
+    <list default="true" id="16032a75-a774-48e8-81a3-70865eb00be7" name="Default" comment="updated the build.gradle">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/buildConfig/debug/com/lfdversluis/tudirect/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/source/buildConfig/debug/com/lfdversluis/tudirect/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -152,8 +153,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38037866" vertical-offset="0" max-vertical-offset="799">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.80895007" vertical-offset="193" max-vertical-offset="799">
+              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -845,10 +846,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="preDexRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -913,6 +910,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="processReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="proguardRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the signing info for each variant" />
@@ -1334,7 +1335,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5585677338867" />
+        <entry key="$PROJECT_DIR$" value="5588082191774" />
         <entry key="C:\Users\Laurens\Documents\Dropbox\stuffies\android\TUDirect1" value="1388766132024" />
       </map>
     </option>
@@ -2247,7 +2248,11 @@
       <created>1401382103292</created>
       <updated>1401382103292</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated the build.gradle">
+      <created>1401382139906</created>
+      <updated>1401382139906</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2361,7 +2366,8 @@
     <MESSAGE value="Removed some redundant string assignments and generated the new version of TUDirect." />
     <MESSAGE value="Changes pointsRequired and pointsNow to double. Fixes #3" />
     <MESSAGE value="added proguard" />
-    <option name="LAST_COMMIT_MESSAGE" value="added proguard" />
+    <MESSAGE value="updated the build.gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the build.gradle" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -2759,8 +2765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38037866" vertical-offset="0" max-vertical-offset="799">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.80895007" vertical-offset="193" max-vertical-offset="799">
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
           <folding />
         </state>
       </provider>
